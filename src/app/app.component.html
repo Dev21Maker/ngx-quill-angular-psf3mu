@@ -1,0 +1,23 @@
+<br />
+Subject:
+<input type="text" [(ngModel)]="subject" />
+<br />
+<br />
+<quill-editor
+  [(ngModel)]="htmlText"
+  placeholder="Enter Text"
+  [modules]="quillConfig"
+  (onSelectionChanged)="onSelectionChanged($event)"
+  (onContentChanged)="onContentChanged($event)"
+>
+  <!-- <div>
+    <pre>{{htmlText}}</pre>
+  </div> -->
+
+  <h2>Preview email will show the following</h2>
+  Subject: {{ subject }}
+  <br />
+  <br />
+  Body:
+  <div [innerHTML]="htmlText"></div>
+</quill-editor>
